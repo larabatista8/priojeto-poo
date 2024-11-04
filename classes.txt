@@ -22,6 +22,14 @@
 7estoque
 8 livro
 9 publicacao
+revista
+jornal
+Mapas
+artigo
+
+Mapas geográficos
+Mapas históricos
+Mapas temáticos
 
 
 
@@ -35,8 +43,13 @@ ReservaComum
 11 Mídia
 
 12 DVD
+documentario
+videoaula
+
+
 13 CD
-14 Audiolivro
+Audiolivro
+podcast
 
 15 Evento
 
