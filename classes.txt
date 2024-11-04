@@ -10,31 +10,51 @@
    - Atributos: nome, ID do usuário, e-mail, histórico de empréstimos.
    - Métodos: registrar(), visualizarHistórico(), renovarEmprestimo().
 
-3. **Emprestimo**
-   - Atributos: livro, usuário, data de empréstimo, data de devolução, status.
-   - Métodos: calcularMulta(), finalizarEmprestimo().
+3- Adim
+4 Estudante
 
-4. **Categoria**
+
+5. **Categoria**
    - Atributos: nome, descrição.
    - Métodos: adicionarLivro(), removerLivro().
 
-5. **Bibliotecário**
-   - Atributos: nome, ID do bibliotecário, e-mail.
-   - Métodos: adicionarLivro(), removerLivro(), gerenciarUsuarios().
+6 Editora
+7estoque
+8 livro
+9 publicacao
 
-6. **Reserva**
+
+
+10 . **Reserva**
    - Atributos: livro, usuário, data da reserva.
    - Métodos: cancelarReserva().
+
+ReservaPrioritaria
+ReservaComum
+
+11 Mídia
+
+12 DVD
+13 CD
+14 Audiolivro
+
+15 Evento
+
+16 Palestra
+17 Workshop
+18 ClubeDoLivro
+
+
 
 ### Interfaces
 
 1. **IAcionamento**
    - Métodos: emprestar(), devolver(), reservar().
 
-2. **IGestaoUsuario**
+2. **gestor**
    - Métodos: registrar(), excluirUsuario(), atualizarUsuario().
 
-3. **ISearchable**
+3. **buscar**
    - Métodos: buscarPorTitulo(), buscarPorAutor(), buscarPorCategoria().
 
 4. **IMultas**
