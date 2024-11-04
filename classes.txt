@@ -1,0 +1,46 @@
+
+
+### Classes
+
+1. **Livro**
+   - Atributos: título, autor, ISBN, ano de publicação, disponibilidade.
+   - Métodos: emprestar(), devolver(), reservar().
+
+2. **Usuário**
+   - Atributos: nome, ID do usuário, e-mail, histórico de empréstimos.
+   - Métodos: registrar(), visualizarHistórico(), renovarEmprestimo().
+
+3. **Emprestimo**
+   - Atributos: livro, usuário, data de empréstimo, data de devolução, status.
+   - Métodos: calcularMulta(), finalizarEmprestimo().
+
+4. **Categoria**
+   - Atributos: nome, descrição.
+   - Métodos: adicionarLivro(), removerLivro().
+
+5. **Bibliotecário**
+   - Atributos: nome, ID do bibliotecário, e-mail.
+   - Métodos: adicionarLivro(), removerLivro(), gerenciarUsuarios().
+
+6. **Reserva**
+   - Atributos: livro, usuário, data da reserva.
+   - Métodos: cancelarReserva().
+
+### Interfaces
+
+1. **IAcionamento**
+   - Métodos: emprestar(), devolver(), reservar().
+
+2. **IGestaoUsuario**
+   - Métodos: registrar(), excluirUsuario(), atualizarUsuario().
+
+3. **ISearchable**
+   - Métodos: buscarPorTitulo(), buscarPorAutor(), buscarPorCategoria().
+
+4. **IMultas**
+   - Métodos: calcularMulta(), visualizarMultas().
+
+5. **IGestaoEmprestimos**
+   - Métodos: listarEmprestimosAtivos(), finalizarEmprestimo().
+
+s.
