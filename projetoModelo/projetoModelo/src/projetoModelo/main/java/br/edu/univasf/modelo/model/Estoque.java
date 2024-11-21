@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class Estoque {
 	
+	public Estoque() {
+		
+	}
 	
 	public Estoque(ArrayList<Livro> estoqueDeLivro) {
 		super();
@@ -11,6 +14,7 @@ public class Estoque {
 	}
 
 	private ArrayList<Livro>estoqueDeLivro;
+	private ArrayList<Jornal>estoqueDeJornal;
 	
 	
 	public void buscarGenero(String genero) {
@@ -24,6 +28,14 @@ public class Estoque {
 		}}
 
 			
+	}
+	
+	public void adicionarJornalAoEstoque(Jornal jornal) {
+		this.estoqueDeJornal.add(jornal);
+	}
+	
+	public void adicionarLivroAoEstoque(Livro livro) {
+		this.estoqueDeLivro.add(livro);
 	}
 
 	public ArrayList<Livro> getEstoqueDeLivro() {
