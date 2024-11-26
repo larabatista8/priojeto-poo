@@ -4,21 +4,21 @@ import java.util.ArrayList;
 
 public class Estoque {
 	
+	ArrayList<Livro> estoqueDeLivros = new ArrayList<Livro>();
+	ArrayList<Jornal> estoqueDeJornais = new ArrayList<Jornal>();
+	
 	public Estoque() {
 		
 	}
 	
-	public Estoque(ArrayList<Livro> estoqueDeLivro) {
+	public Estoque(ArrayList<Livro> estoqueDeLivros) {
 		super();
-		this.estoqueDeLivro = estoqueDeLivro;
+		this.estoqueDeLivros = estoqueDeLivros;
 	}
-
-	private ArrayList<Livro>estoqueDeLivro;
-	private ArrayList<Jornal>estoqueDeJornal;
 	
 	
 	public void buscarGenero(String genero) {
-		for(Livro it:estoqueDeLivro) {
+		for(Livro it:estoqueDeLivros) {
 			if (it.getGenero().compareTo(genero)==0)
 				it.exibirDetalhes();
 				else {
@@ -31,19 +31,19 @@ public class Estoque {
 	}
 	
 	public void adicionarJornalAoEstoque(Jornal jornal) {
-		this.estoqueDeJornal.add(jornal);
+		this.estoqueDeJornais.add(jornal);
 	}
 	
 	public void adicionarLivroAoEstoque(Livro livro) {
-		this.estoqueDeLivro.add(livro);
+		this.estoqueDeLivros.add(livro);
 	}
 
-	public ArrayList<Livro> getEstoqueDeLivro() {
-		return estoqueDeLivro;
+	public ArrayList<Livro> getEstoqueDeLivros() {
+		return estoqueDeLivros;
 	}
 
-	public void setEstoqueDeLivro(ArrayList<Livro> estoqueDeLivro) {
-		this.estoqueDeLivro = estoqueDeLivro;
+	public void setEstoqueDeLivros(ArrayList<Livro> estoqueDeLivro) {
+		this.estoqueDeLivros = estoqueDeLivro;
 	}
 
 }
