@@ -1,9 +1,10 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.model;
-
-	public class Usuario {
+import java.util.ArrayList;
+	public class Usuario  {
 		private String nome;
 		private String matricula;
 		private String email;
+		
 		public Usuario(String nome, String matricula, String email) {
 			super();
 			this.nome = nome;
@@ -38,7 +39,9 @@ package projetoModelo.main.java.br.edu.univasf.modelo.model;
 		
 				}
 		
-		public void fazerEmprestimo() {}
+		public void fazerEmprestimo() {
+			
+		}
 		
 		public void renovarEmprestimo() {}
 		

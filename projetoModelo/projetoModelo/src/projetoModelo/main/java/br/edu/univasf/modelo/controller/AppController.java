@@ -1,5 +1,7 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.controller;
 
+import java.util.Scanner;
+
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Adimin;
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Estoque;
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Usuario;
@@ -79,16 +81,19 @@ public class AppController {
             int opcao = view.exibirMenuUsuario();
             switch (opcao) {
                 case 1:
-                    view.exibirMensagem("Consultando livros disponíveis... (a ser implementado)");
+                    view.exibirMensagem("Consultando livros disponíveis...");
+                    estoque.listarLivrosDisponiveis();
                     break;
                 case 2:
-                    view.exibirMensagem("Fazendo empréstimo... (a ser implementado)");
+                    view.exibirMensagem("Fazendo empréstimo...");
+                    estoque.fazerEmprestimo();
                     break;
                 case 3:
                     view.exibirMensagem("Renovando empréstimo... (a ser implementado)");
                     break;
                 case 4:
-                    view.exibirMensagem("Devolvendo empréstimo... (a ser implementado)");
+                    view.exibirMensagem("Devolvendo empréstimo...");
+                    estoque.devolverEmprestimo();
                     break;
                 case 5:
                     view.exibirMensagem("Consultando multas... (a ser implementado)");
