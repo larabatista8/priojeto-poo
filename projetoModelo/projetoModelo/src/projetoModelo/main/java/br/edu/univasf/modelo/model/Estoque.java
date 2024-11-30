@@ -1,5 +1,9 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.model;
 
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Estoque;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Livro;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Usuario;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Estoque implements Emprestimo{
@@ -53,22 +57,27 @@ public class Estoque implements Emprestimo{
 		}
 	}
 	
-	public void fazerEmprestimo() {
-		System.out.println("Digite o titulo do livro:");
+	public void fazerEmprestimo(Usuario user) {
+		System.out.println("\nDigite o titulo do livro:");
 		Scanner input = new Scanner(System.in); 
 		String titulo = input.nextLine();
 		
+		if(user.getDiasDeSuspensao()>0) System.out.println("Não é possível realizar o empr´stimo!\n "
+				+ "Você possui"+ user.getDiasDeSuspensao() + "dias de suspensão");
+		else {
 		for(Livro it:estoqueDeLivros) {
 			
 			if(it.isDisponivel() == true && it.getTitulo().compareToIgnoreCase(titulo)==0) {
-				System.out.println("Emprestimo realizado!");
+				user.addLivrosEmprestados(it);
+				System.out.println("\nEmprestimo realizado!");
 				it.setDisponivel(false);
 				}
 			else if(it.isDisponivel()== false && it.getTitulo().compareToIgnoreCase(titulo)==0) {
-				System.out.println("Livro não disponível para emprestimo");
-			}
+				System.out.println("\nLivro não disponível para emprestimo");
+				}
 			
-			}
+					} 
+		}
 	}
 
 	@Override
@@ -78,12 +87,13 @@ public class Estoque implements Emprestimo{
 	}
 
 	@Override
-	public void devolverEmprestimo() {
-		System.out.println("Digite o titulo do livro:");
+	public void devolverEmprestimo(Usuario user) {
+		System.out.println("\nDigite o titulo do livro a ser devolvido:");
 		Scanner input = new Scanner(System.in); 
 		String titulo = input.nextLine();
 		for(Livro it:estoqueDeLivros) {
 			if(it.getTitulo().compareToIgnoreCase(titulo)==0) {
+			user.devolverLivroEmprestado(it);
 				it.setDisponivel(true);
 				System.out.println("Emprestimo devolvido!");
 				}
@@ -92,21 +102,39 @@ public class Estoque implements Emprestimo{
 	}
 
 	@Override
-	public double consultarMultas() {
+	public void consultarEmprestimosAtuais(Usuario user) {
 		// TODO Auto-generated method stub
-		return 0;
+		ArrayList<Livro> lista = user.getLivrosEmprestados();
+		if(lista.isEmpty()) {
+			System.out.println("Nenhum emprestimo ativo");
+		}
+		else {	
+				for(Livro it: lista) {
+					System.out.println(it.getTitulo());
+				}
+			}
+		}
+
+	
+	@Override
+	public int consultarSuspensao(Usuario user){
+		// TODO Auto-generated method stub
+		return user.getDiasDeSuspensao();
 	}
 
 	@Override
-	public void pagarMultas() {
+	public void removerSuspensao(Usuario user) {
 		// TODO Auto-generated method stub
+		user.setDiasDeSuspensao(0);
 		
 	}
+	
+	
 
-	@Override
-	public void consultaEmprestimosAtuais() {
-		// TODO Auto-generated method stub
-		
+
+	
+
+	
 	}
 
-}
+

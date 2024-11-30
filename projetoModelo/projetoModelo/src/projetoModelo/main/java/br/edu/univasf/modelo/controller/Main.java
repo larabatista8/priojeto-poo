@@ -22,7 +22,7 @@ public class Main {
         Livro livro2 = new Livro("Dom Casmurro", "Machado de Assis", "subtitulo", "sinopse", "Romance", "2835isbn", 480, 1899, "sumario", "editora", true);
         estoque.adicionarLivroAoEstoque(livro2);
         Livro livro3 = new Livro("O cortiço", "Aluisio Azevedo", "subtitulo", "sinopse", "Ficção", "78942isbn", 354, 1890, "sumario", "editora", true);
-        estoque.adicionarLivroAoEstoque(livro2);
+        estoque.adicionarLivroAoEstoque(livro3);
         
         
         // Inicializando a View e o Controller

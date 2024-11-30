@@ -1,16 +1,30 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.model;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Estoque;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Livro;
 import java.util.ArrayList;
 	public class Usuario  {
 		private String nome;
 		private String matricula;
 		private String email;
+		private ArrayList<Livro> livrosEmprestados = new ArrayList<Livro>();
+		private int diasDeSuspensao;
 		
 		public Usuario(String nome, String matricula, String email) {
 			super();
 			this.nome = nome;
 			this.matricula = matricula;
 			this.email = email;
+			this.diasDeSuspensao=0; // dias de suspensao começa com 0
 		}
+		
+		public ArrayList<Livro> getLivrosEmprestados() {
+			return livrosEmprestados;
+		}
+
+		public void setLivrosEmprestados(ArrayList<Livro> livrosEmprestados) {
+			this.livrosEmprestados = livrosEmprestados;
+		}
+
 		public String getNome() {
 			return nome;
 		}
@@ -30,36 +44,27 @@ import java.util.ArrayList;
 			this.email = email;
 		}
 		
-		
-		public void login() {
-			
+		public int getDiasDeSuspensao() {
+			return diasDeSuspensao;
 		}
-		
-		public void logout() {
-		
-				}
-		
-		public void fazerEmprestimo() {
-			
-		}
-		
-		public void renovarEmprestimo() {}
-		
-		public void devolverEmprestimo() {}
 
-		public double consultarMultas() {
-			return 0;
-			}
+		public void setDiasDeSuspensao(int diasDeSuspensao) {
+			this.diasDeSuspensao = diasDeSuspensao;
+		}
+
+		public void addLivrosEmprestados(Livro livro) {
+			this.livrosEmprestados.add(livro);
+		}
+		public void devolverLivroEmprestado(Livro livro) {
+			this.livrosEmprestados.remove(livro);
+		}
+
 		
-		public void pagarMultas() {}
 		
-		public void consultaEmprestimosAtuais() {}
-		
-		
-		public void consultarLivrosDisponiveis() {}
-		
+			
 		
 	}
+		
 
 
 

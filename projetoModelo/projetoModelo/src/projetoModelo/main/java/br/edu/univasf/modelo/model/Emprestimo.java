@@ -2,17 +2,20 @@ package projetoModelo.main.java.br.edu.univasf.modelo.model;
 
 public interface Emprestimo {
 	
-	public void fazerEmprestimo();
+	public void fazerEmprestimo(Usuario user);
 	
 	public void renovarEmprestimo();
 	
-	public void devolverEmprestimo();
+	public void devolverEmprestimo(Usuario user);
 
-	public double consultarMultas();
+	public int consultarSuspensao(Usuario user);
 	
-	public void pagarMultas();
+	public void removerSuspensao(Usuario user);
 	
-	public void consultaEmprestimosAtuais();
+
+	void consultarEmprestimosAtuais(Usuario user);
+
+	
 	
 
 }
