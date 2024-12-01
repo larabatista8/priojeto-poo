@@ -50,7 +50,6 @@ public class Estoque implements Emprestimo{
 		this.estoqueDeLivros = estoqueDeLivro;
 	}
 	
-<<<<<<< HEAD
 	public void listarLivros() {
 		System.out.println();
 	    if (estoqueDeLivros.isEmpty()) {
@@ -109,7 +108,7 @@ public class Estoque implements Emprestimo{
 			
 					} 
 		}
->>>>>>> branch 'main' of https://github.com/larabatista8/projeto-poo.git
+
 	}
 
 	@Override

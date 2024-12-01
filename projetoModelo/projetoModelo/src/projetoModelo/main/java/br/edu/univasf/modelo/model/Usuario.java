@@ -44,18 +44,15 @@ import java.util.ArrayList;
 			this.email = email;
 		}
 		
-<<<<<<< HEAD
-		
 		public void fazerEmprestimo() {}
 		
 		public void renovarEmprestimo() {}
 		
 		public void devolverEmprestimo() {}
-=======
+
 		public int getDiasDeSuspensao() {
 			return diasDeSuspensao;
 		}
->>>>>>> branch 'main' of https://github.com/larabatista8/projeto-poo.git
 
 		public void setDiasDeSuspensao(int diasDeSuspensao) {
 			this.diasDeSuspensao = diasDeSuspensao;
@@ -68,13 +65,6 @@ import java.util.ArrayList;
 			this.livrosEmprestados.remove(livro);
 		}
 
-		
-		
-<<<<<<< HEAD
-=======
-			
->>>>>>> branch 'main' of https://github.com/larabatista8/projeto-poo.git
-		
 	}
 		
 
