@@ -18,6 +18,7 @@ public class AppView {
 	    }
 	    
 	    public int exibirMenuInicial() {
+	    	System.out.println();
 	        System.out.println("======================================");
 	        System.out.println("       Sistema de Biblioteca          ");
 	        System.out.println("======================================");
@@ -28,6 +29,7 @@ public class AppView {
 	    }
 
 	    public Usuario obterDadosLogin() {
+	    	System.out.println();
 	        scanner.nextLine(); // Limpar buffer
 	        System.out.println("Digite seus dados para realizar o login:");
 	        System.out.print("Matrícula: ");
@@ -38,18 +40,23 @@ public class AppView {
 	    }
 
 	    public int exibirMenuAdmin() {
+	        System.out.println();
 	        System.out.println("======================================");
 	        System.out.println("        Menu - Administrador          ");
 	        System.out.println("======================================");
 	        System.out.println("1. Adicionar Livro");
 	        System.out.println("2. Adicionar Jornal");
-	        System.out.println("3. Visualizar Empréstimos");
-	        System.out.println("4. Sair");
+	        System.out.println("3. Listar Livros");
+	        System.out.println("4. Listar Jornais");
+	        System.out.println("0. Sair");
 	        System.out.print("Digite a opção desejada: ");
-	        return scanner.nextInt();
+	        int opcao = scanner.nextInt();
+	        scanner.nextLine(); // Limpa o buffer
+	        return opcao;
 	    }
 
 	    public int exibirMenuUsuario() {
+	    	System.out.println();
 	        System.out.println("======================================");
 	        System.out.println("        Menu - Usuário Comum          ");
 	        System.out.println("======================================");

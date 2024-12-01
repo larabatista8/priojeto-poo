@@ -17,7 +17,6 @@ import java.util.Scanner;
 	            System.out.println("Erro: Estoque não pode ser nulo.");
 	            return;
 	        }
-
 	        System.out.println("=== Cadastro de Livro ===");
 	        System.out.print("Digite o título do livro: ");
 	        String titulo = scanner.nextLine();
@@ -53,6 +52,7 @@ import java.util.Scanner;
 
 	        System.out.print("O livro está disponível (true/false)? ");
 	        boolean disponivel = scanner.nextBoolean();
+	        scanner.nextLine();
 
 	        Livro novoLivro = new Livro(titulo, autor, subTitulo, sinopse, genero, isbn, numeroDePaginas,
 	                anoPublicacao, sumario, nomeEditora, disponivel);
@@ -61,8 +61,28 @@ import java.util.Scanner;
 	        System.out.println("Livro adicionado ao estoque com sucesso!");
 		}
 		
-		public void addJornal(Estoque estoque, Jornal jornal) {
-			estoque.adicionarJornalAoEstoque(jornal);	
+		public void addJornal(Estoque estoque) {
+			if (estoque == null) {
+	            System.out.println("Erro: Estoque não pode ser nulo.");
+	            return;
+	        }
+			
+			System.out.println();
+	        System.out.println("=== Cadastro de Jornal ===");
+	        System.out.print("Digite o título do jornal: ");
+	        String titulo = scanner.nextLine();
+
+	        System.out.print("Digite o autor do jornal: ");
+	        String autor = scanner.nextLine();
+	        
+	        System.out.print("Digite o ano de publicação do jornal: ");
+	        int anoPublicacao = scanner.nextInt();
+	        scanner.nextLine();
+	        
+	        Jornal novoJornal = new Jornal(titulo,autor,anoPublicacao);
+	        
+	        estoque.adicionarJornalAoEstoque(novoJornal);
+	        System.out.println("Jornal adicionado ao estoque com sucesso!");
 		}
 		
 		public void apagaLivro() {}

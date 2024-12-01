@@ -30,14 +30,6 @@ package projetoModelo.main.java.br.edu.univasf.modelo.model;
 		}
 		
 		
-		public void login() {
-			
-		}
-		
-		public void logout() {
-		
-				}
-		
 		public void fazerEmprestimo() {}
 		
 		public void renovarEmprestimo() {}
@@ -52,8 +44,6 @@ package projetoModelo.main.java.br.edu.univasf.modelo.model;
 		
 		public void consultaEmprestimosAtuais() {}
 		
-		
-		public void consultarLivrosDisponiveis() {}
 		
 		
 	}
