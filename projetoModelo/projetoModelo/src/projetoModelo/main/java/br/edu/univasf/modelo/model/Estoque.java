@@ -1,8 +1,12 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.model;
 
-import java.util.ArrayList;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Estoque;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Livro;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Usuario;
 
-public class Estoque {
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Estoque implements Emprestimo{
 	
 	ArrayList<Livro> estoqueDeLivros = new ArrayList<Livro>();
 	ArrayList<Jornal> estoqueDeJornais = new ArrayList<Jornal>();
@@ -46,6 +50,7 @@ public class Estoque {
 		this.estoqueDeLivros = estoqueDeLivro;
 	}
 	
+<<<<<<< HEAD
 	public void listarLivros() {
 		System.out.println();
 	    if (estoqueDeLivros.isEmpty()) {
@@ -75,5 +80,93 @@ public class Estoque {
 	        i++;
 	    }
 	}
+	
+	public void listarLivrosDisponiveis() {
+		for(Livro it:estoqueDeLivros) {
+			if(it.isDisponivel() == true)
+				System.out.println(it.getTitulo());
+		}
+	}
+	
+	public void fazerEmprestimo(Usuario user) {
+		System.out.println("\nDigite o titulo do livro:");
+		Scanner input = new Scanner(System.in); 
+		String titulo = input.nextLine();
+		
+		if(user.getDiasDeSuspensao()>0) System.out.println("Não é possível realizar o empr´stimo!\n "
+				+ "Você possui"+ user.getDiasDeSuspensao() + "dias de suspensão");
+		else {
+		for(Livro it:estoqueDeLivros) {
+			
+			if(it.isDisponivel() == true && it.getTitulo().compareToIgnoreCase(titulo)==0) {
+				user.addLivrosEmprestados(it);
+				System.out.println("\nEmprestimo realizado!");
+				it.setDisponivel(false);
+				}
+			else if(it.isDisponivel()== false && it.getTitulo().compareToIgnoreCase(titulo)==0) {
+				System.out.println("\nLivro não disponível para emprestimo");
+				}
+			
+					} 
+		}
+>>>>>>> branch 'main' of https://github.com/larabatista8/projeto-poo.git
+	}
 
-}
+	@Override
+	public void renovarEmprestimo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void devolverEmprestimo(Usuario user) {
+		System.out.println("\nDigite o titulo do livro a ser devolvido:");
+		Scanner input = new Scanner(System.in); 
+		String titulo = input.nextLine();
+		for(Livro it:estoqueDeLivros) {
+			if(it.getTitulo().compareToIgnoreCase(titulo)==0) {
+			user.devolverLivroEmprestado(it);
+				it.setDisponivel(true);
+				System.out.println("Emprestimo devolvido!");
+				}
+		}
+		
+	}
+
+	@Override
+	public void consultarEmprestimosAtuais(Usuario user) {
+		// TODO Auto-generated method stub
+		ArrayList<Livro> lista = user.getLivrosEmprestados();
+		if(lista.isEmpty()) {
+			System.out.println("Nenhum emprestimo ativo");
+		}
+		else {	
+				for(Livro it: lista) {
+					System.out.println(it.getTitulo());
+				}
+			}
+		}
+
+	
+	@Override
+	public int consultarSuspensao(Usuario user){
+		// TODO Auto-generated method stub
+		return user.getDiasDeSuspensao();
+	}
+
+	@Override
+	public void removerSuspensao(Usuario user) {
+		// TODO Auto-generated method stub
+		user.setDiasDeSuspensao(0);
+		
+	}
+	
+	
+
+
+	
+
+	
+	}
+
+

@@ -10,7 +10,7 @@ public class Teste {
 		ArrayList<Livro>listaLivro=new ArrayList<Livro>();
 		listaLivro.add(livro2);
 		Estoque estoque1 = new Estoque(listaLivro);
-		estoque1.setEstoqueDeLivro(listaLivro);
+		estoque1.setEstoqueDeLivros(listaLivro);
 		estoque1.buscarGenero("ddsdf");
 
 	}
