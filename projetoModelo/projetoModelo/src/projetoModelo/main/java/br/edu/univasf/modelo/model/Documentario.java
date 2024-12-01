@@ -1,13 +1,13 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.model;
 
-public class Documetario {
+public class Documentario {
 	private String anoLancamento;
 	private String diretor;
 	private String paisOrigem;
 	private String idioma;
 	private String classificacaoIndicativa;
 	
-	public Documetario(String anoLancamento, String diretor, String paisOrigem, String idioma,
+	public Documentario(String anoLancamento, String diretor, String paisOrigem, String idioma,
 			String classificacaoIndicativa) {
 		super();
 		this.anoLancamento = anoLancamento;

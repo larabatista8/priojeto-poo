@@ -10,6 +10,10 @@ public class Estoque implements Emprestimo{
 	
 	ArrayList<Livro> estoqueDeLivros = new ArrayList<Livro>();
 	ArrayList<Jornal> estoqueDeJornais = new ArrayList<Jornal>();
+	ArrayList<CD> estoqueDeCD = new ArrayList<CD>();
+	ArrayList<DVD> estoqueDeDVD = new ArrayList<DVD>();
+	ArrayList<AudioLivro> estoqueDeAudioLivro = new ArrayList<AudioLivro>();
+	ArrayList<Documentario> estoqueDeDocumentario = new ArrayList<Documentario>();
 	
 	public Estoque() {
 		
@@ -159,6 +163,36 @@ public class Estoque implements Emprestimo{
 		user.setDiasDeSuspensao(0);
 		
 	}
+
+	public boolean removerLivroDoEstoque(String titulo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean removerJornalDoEstoque(String titulo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean removerCDDoEstoque(String titulo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean removerDVDoEstoque(String titulo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void adicionarCDAoEstoque(CD novoCD) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void adicionarDVDAoEstoque(DVD novoDVD) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
@@ -167,5 +201,4 @@ public class Estoque implements Emprestimo{
 
 	
 	}
-
 
