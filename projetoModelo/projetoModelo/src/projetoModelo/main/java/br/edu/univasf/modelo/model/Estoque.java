@@ -165,14 +165,42 @@ public class Estoque implements Emprestimo{
 	}
 
 	public boolean removerLivroDoEstoque(String titulo) {
-		// TODO Auto-generated method stub
-		return false;
+	    // Verifica se o título é válido
+	    if (titulo == null || titulo.isEmpty()) {
+	        return false; // Título inválido
+	    }
+
+	    // Percorre o estoque de livros
+	    for (int i = 0; i < estoqueDeLivros.size(); i++) {
+	        Livro livro = estoqueDeLivros.get(i);
+	        if (livro.getTitulo().equalsIgnoreCase(titulo)) {
+	            estoqueDeLivros.remove(i); // Remove o livro da lista
+	            return true; // Indica que o livro foi removido
+	        }
+	    }
+
+	    return false; // Retorna false se o livro não foi encontrado
 	}
 
+
 	public boolean removerJornalDoEstoque(String titulo) {
-		// TODO Auto-generated method stub
-		return false;
+	    // Verifica se o título é válido
+	    if (titulo == null || titulo.isEmpty()) {
+	        return false; // Título inválido
+	    }
+
+	    // Percorre o estoque de jornais
+	    for (int i = 0; i < estoqueDeJornais.size(); i++) {
+	        Jornal jornal = estoqueDeJornais.get(i);
+	        if (jornal.getTitulo().equalsIgnoreCase(titulo)) {
+	            estoqueDeJornais.remove(i); // Remove o jornal da lista
+	            return true; // Indica que o jornal foi removido
+	        }
+	    }
+
+	    return false; // Retorna false se o jornal não foi encontrado
 	}
+
 
 	public boolean removerCDDoEstoque(String titulo) {
 		// TODO Auto-generated method stub

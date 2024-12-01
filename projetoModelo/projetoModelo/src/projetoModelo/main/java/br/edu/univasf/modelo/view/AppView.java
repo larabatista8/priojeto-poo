@@ -48,6 +48,8 @@ public class AppView {
 	        System.out.println("2. Adicionar Jornal");
 	        System.out.println("3. Listar Livros");
 	        System.out.println("4. Listar Jornais");
+	        System.out.println("5. Remover Livro");
+	        System.out.println("6. Remover Jornal");
 	        System.out.println("0. Sair");
 	        System.out.print("Digite a opção desejada: ");
 	        int opcao = scanner.nextInt();
