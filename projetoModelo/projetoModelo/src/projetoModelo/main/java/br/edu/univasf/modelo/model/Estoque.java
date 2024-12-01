@@ -84,6 +84,38 @@ public class Estoque implements Emprestimo{
 	    }
 	}
 	
+	public void listarCDs() {
+	    System.out.println();
+	    if (estoqueDeCD.isEmpty()) {
+	        System.out.println("Nenhum CD disponível no estoque.");
+	        return;
+	    }
+
+	    System.out.println("Lista de CDs Disponíveis:");
+	    int i = 0;
+	    for (CD cd : estoqueDeCD) {
+	        System.out.println(i + " - " + cd.getTitulo());
+	        i++;
+	    }
+	}
+	
+	public void listarDVDs() {
+	    System.out.println();
+	    if (estoqueDeDVD.isEmpty()) {
+	        System.out.println("Nenhum DVD disponível no estoque.");
+	        return;
+	    }
+
+	    System.out.println("Lista de DVDs Disponíveis:");
+	    int i = 0;
+	    for (DVD dvd : estoqueDeDVD) {
+	        System.out.println(i + " - " + dvd.getTitulo());
+	        i++;
+	    }
+	}
+
+
+	
 	public void listarLivrosDisponiveis() {
 		for(Livro it:estoqueDeLivros) {
 			if(it.isDisponivel() == true)
@@ -203,22 +235,49 @@ public class Estoque implements Emprestimo{
 
 
 	public boolean removerCDDoEstoque(String titulo) {
-		// TODO Auto-generated method stub
-		return false;
+	    // Verifica se o título é válido
+	    if (titulo == null || titulo.isEmpty()) {
+	        return false; // Título inválido
+	    }
+
+	    // Percorre o estoque de CDs
+	    for (int i = 0; i < estoqueDeCD.size(); i++) {
+	        CD cd = estoqueDeCD.get(i);
+	        if (cd.getTitulo().equalsIgnoreCase(titulo)) {
+	            estoqueDeCD.remove(i); // Remove o CD da lista
+	            return true; // Indica que o CD foi removido
+	        }
+	    }
+
+	    return false; // Retorna false se o CD não foi encontrado
 	}
 
-	public boolean removerDVDoEstoque(String titulo) {
-		// TODO Auto-generated method stub
-		return false;
+
+	public boolean removerDVDDoEstoque(String titulo) {
+	    // Verifica se o título é válido
+	    if (titulo == null || titulo.isEmpty()) {
+	        return false; // Título inválido
+	    }
+
+	    // Percorre o estoque de DVDs
+	    for (int i = 0; i < estoqueDeDVD.size(); i++) {
+	        DVD dvd = estoqueDeDVD.get(i);
+	        if (dvd.getTitulo().equalsIgnoreCase(titulo)) {
+	            estoqueDeDVD.remove(i); // Remove o DVD da lista
+	            return true; // Indica que o DVD foi removido
+	        }
+	    }
+
+	    return false; // Retorna false se o DVD não foi encontrado
 	}
+
 
 	public void adicionarCDAoEstoque(CD novoCD) {
-		// TODO Auto-generated method stub
-		
+		this.estoqueDeCD.add(novoCD);
 	}
 
 	public void adicionarDVDAoEstoque(DVD novoDVD) {
-		// TODO Auto-generated method stub
+		this.estoqueDeDVD.add(novoDVD);
 		
 	}
 	

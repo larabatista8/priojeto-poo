@@ -50,6 +50,10 @@ public class AppView {
 	        System.out.println("4. Listar Jornais");
 	        System.out.println("5. Remover Livro");
 	        System.out.println("6. Remover Jornal");
+	        System.out.println("7. Adicionar CD");
+	        System.out.println("8. Adicionar DVD");
+	        System.out.println("9. Listar CDs");
+	        System.out.println("10. Listar DVDs");
 	        System.out.println("0. Sair");
 	        System.out.print("Digite a opção desejada: ");
 	        int opcao = scanner.nextInt();

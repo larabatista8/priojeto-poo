@@ -72,6 +72,19 @@ public class AppController {
                 	break;
                 case 6:
                 	adimin.apagaJornal(estoque);
+                	break;
+                case 7:
+                	adimin.addCD(estoque);
+                	break;
+                case 8:
+                	adimin.addDVD(estoque);
+                	break;
+                case 9:
+                	estoque.listarCDs();
+                	break;
+                case 10:
+                	estoque.listarDVDs();
+                	break;
                 case 0:
                     rodando = false;
                     view.exibirMensagem("Saindo do menu do administrador.");

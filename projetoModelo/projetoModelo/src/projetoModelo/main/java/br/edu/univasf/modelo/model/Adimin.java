@@ -101,12 +101,8 @@ import java.util.Scanner;
 	        System.out.print("Digite o gênero musical: ");
 	        String tema = scanner.nextLine();
 	        
-	        System.out.print("Digite o ano de lançamento: ");
-	        int anoLancamento = scanner.nextInt();
-	        scanner.nextLine(); // Consumir o \n
-	        
 	        System.out.print("Digite a duração total (em minutos): ");
-	        int duracao = scanner.nextInt();
+	        double duracao = scanner.nextDouble();
 	        scanner.nextLine();
 	        
 	        System.out.print("Digite o formato: ");
@@ -150,7 +146,7 @@ import java.util.Scanner;
 		    System.out.print("Digite o formato do DVD: ");
 		    String formato = scanner.nextLine();
 		    
-		    DVD novoDVD = new DVD(formato, tamanhoArquivo, duracao, titulo, autoria, tema);
+		    DVD novoDVD = new DVD(formato, tamanhoArquivo, duracao, titulo, autoria, tema, formato);
 		    estoque.adicionarDVDAoEstoque(novoDVD);
 		    
 		    System.out.println("DVD adicionado ao estoque com sucesso!");
