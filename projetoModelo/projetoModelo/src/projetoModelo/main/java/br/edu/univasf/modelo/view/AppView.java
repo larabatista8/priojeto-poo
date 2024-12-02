@@ -53,12 +53,12 @@ public class AppView {
 	        System.out.println("======================================");
 	        System.out.println("        Menu - Usuário Comum          ");
 	        System.out.println("======================================");
-	        System.out.println("1. Consultar Livros Disponíveis");
+	        System.out.println("1. Consultar Obras Disponíveis");
 	        System.out.println("2. Fazer Empréstimo");
 	        System.out.println("3. Renovar Empréstimo");
 	        System.out.println("4. Devolver Empréstimo");
 	        System.out.println("5. Consultar Multas");
-	        System.out.println("6.Consultar emprestimos");
+	        System.out.println("6. Consultar emprestimos");
 	        System.out.println("7. Sair");
 	        System.out.print("Digite a opção desejada: ");
 	        return scanner.nextInt();

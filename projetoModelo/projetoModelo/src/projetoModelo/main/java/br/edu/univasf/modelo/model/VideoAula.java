@@ -13,10 +13,11 @@ public class VideoAula extends DVD {
 	}
 
 	public VideoAula(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria, String tema,
-			String resolucao, String disciplina) {
-		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, resolucao);
+			boolean disponivel, String resolucao, String disciplina) {
+		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, disponivel, resolucao);
 		this.disciplina = disciplina;
 	}
-	
+
+		
 
 }

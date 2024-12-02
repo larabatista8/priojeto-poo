@@ -1,18 +1,28 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.model;
 
-public class Midia {
+public  abstract class Midia {
 	private String formato; // ex: MP3, MP4, JPEG
 	private double tamanhoArquivo; // ex: 30 GB
 	private double duracao; // ex 150 min
 	private String titulo;
 	private String autoria;
 	private String tema;
-	
-	
-	
+	private boolean disponivel;
 	
 
-	public Midia(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria, String tema) {
+
+	public boolean isDisponivel() {
+		return disponivel;
+	}
+
+
+	public void setDisponivel(boolean disponivel) {
+		this.disponivel = disponivel;
+	}
+
+
+	public Midia(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria, String tema,
+			boolean disponivel) {
 		super();
 		this.formato = formato;
 		this.tamanhoArquivo = tamanhoArquivo;
@@ -20,6 +30,7 @@ public class Midia {
 		this.titulo = titulo;
 		this.autoria = autoria;
 		this.tema = tema;
+		this.disponivel = disponivel;
 	}
 
 

@@ -7,9 +7,12 @@ public class DVD  extends Midia{
 	
 	
 
+	
+
+
 	public DVD(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria, String tema,
-			String resolucao) {
-		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema);
+			boolean disponivel, String resolucao) {
+		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, disponivel);
 		this.resolucao = resolucao;
 	}
 

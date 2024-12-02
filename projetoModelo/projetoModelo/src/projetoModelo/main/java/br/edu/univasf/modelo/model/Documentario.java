@@ -1,15 +1,18 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.model;
 
-public class Documetario {
+public class Documentario extends DVD {
 	private String anoLancamento;
 	private String diretor;
 	private String paisOrigem;
 	private String idioma;
 	private String classificacaoIndicativa;
 	
-	public Documetario(String anoLancamento, String diretor, String paisOrigem, String idioma,
-			String classificacaoIndicativa) {
-		super();
+	
+
+	public Documentario(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria,
+			String tema, boolean disponivel, String resolucao, String anoLancamento, String diretor, String paisOrigem,
+			String idioma, String classificacaoIndicativa) {
+		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, disponivel, resolucao);
 		this.anoLancamento = anoLancamento;
 		this.diretor = diretor;
 		this.paisOrigem = paisOrigem;

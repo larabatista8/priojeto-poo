@@ -81,22 +81,23 @@ public class AppController {
             int opcao = view.exibirMenuUsuario();
             switch (opcao) {
                 case 1:
-                    view.exibirMensagem("Consultando livros disponíveis...\n");
-                    estoque.listarLivrosDisponiveis();
+                    view.exibirMensagem("Consultando obras disponíveis...\n");
+                    estoque.listarObrasDisponiveis();
                     break;
                 case 2:
                     view.exibirMensagem("Fazendo empréstimo...");
-                    estoque.fazerEmprestimo(user);
+                    estoque.menuFazerEmprestimo(user);
                     break;
                 case 3:
-                    view.exibirMensagem("Renovando empréstimo... (a ser implementado)");
+                    view.exibirMensagem("Renovando empréstimo...");
+                    estoque.renovarEmprestimo(user);
                     break;
                 case 4:
                     view.exibirMensagem("Devolvendo empréstimo...");
-                    estoque.devolverEmprestimo(user);
+                    estoque.menuDevolucao(user);
                     break;
                 case 5:
-                    view.exibirMensagem("Consultando multas... (a ser implementado)");
+                    view.exibirMensagem("Consultando multas...");
                    System.out.println("Dias de suspensao: " + estoque.consultarSuspensao(user));
                     break;
                 case 6:

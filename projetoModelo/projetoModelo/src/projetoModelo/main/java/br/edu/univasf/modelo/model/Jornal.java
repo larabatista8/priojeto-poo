@@ -4,10 +4,23 @@ public class Jornal extends Publicacao{
 	
 
 	private String dataPublicacao;
+	private boolean disponivel;
+
+
 	
-	public Jornal(String titulo, String autor, int anoPublicacao) {
+
+	public boolean isDisponivel() {
+		return disponivel;
+	}
+
+	public void setDisponivel(boolean disponivel) {
+		this.disponivel = disponivel;
+	}
+
+	public Jornal(String titulo, String autor, int anoPublicacao, String dataPublicacao, boolean disponivel) {
 		super(titulo, autor, anoPublicacao);
-		// TODO Auto-generated constructor stub
+		this.dataPublicacao = dataPublicacao;
+		this.disponivel = disponivel;
 	}
 
 	@Override
@@ -23,6 +36,8 @@ public class Jornal extends Publicacao{
 	public void setDataPublicacao(String dataPublicacao) {
 		this.dataPublicacao = dataPublicacao;
 	}
+
+	
 
 	
 	

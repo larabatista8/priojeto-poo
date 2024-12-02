@@ -1,10 +1,16 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.controller;
 
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Adimin;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.AudioLivro;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Documentario;
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Estoque;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Jornal;
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Livro;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.Podcast;
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Usuario;
+import projetoModelo.main.java.br.edu.univasf.modelo.model.VideoAula;
 import projetoModelo.main.java.br.edu.univasf.modelo.view.AppView;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -23,6 +29,66 @@ public class Main {
         estoque.adicionarLivroAoEstoque(livro2);
         Livro livro3 = new Livro("O cortiço", "Aluisio Azevedo", "subtitulo", "sinopse", "Ficção", "78942isbn", 354, 1890, "sumario", "editora", true);
         estoque.adicionarLivroAoEstoque(livro3);
+        
+        // adicionando jornal ao estoque
+        ArrayList<Jornal> listaJornal = new ArrayList<Jornal>();
+        Jornal jornal1 = new Jornal("Folha de Sao Paulo", "Folha de São Paulo", 2024, "02/12/2024", true);
+        listaJornal.add(jornal1);
+        Jornal jornal2 = new Jornal("Estadao", "O estadao", 2024, "30/11/2024", true);
+        listaJornal.add(jornal2);
+        Jornal jornal3 = new Jornal("O Globo", "O Globo", 2024, "02/12/2024", true);
+        listaJornal.add(jornal3);
+         estoque.setEstoqueDeJornais(listaJornal);
+        
+        // adicionando podcast ao estoque
+         ArrayList<Podcast> listaPodcast = new ArrayList<Podcast>();
+         Podcast podcast1 = new Podcast("mp3", 343, 4.5, "Educacao Brasil", "Revista educacao", "educacao basica", true, 20);
+         listaPodcast.add(podcast1);
+         
+         Podcast podcast2 = new Podcast("mp3", 300, 4.5, "Historia em meia hora", "Agencia de Podcast", "historia", true, 45);
+         listaPodcast.add(podcast2);
+         Podcast podcast3 = new Podcast("mp3", 300, 4.5, "Educacao financeira", "G1", "economia", true, 58);
+         listaPodcast.add(podcast3);
+         estoque.setEstoqueDePodcasts(listaPodcast);
+         
+        //adicionando audiolivro ao estoque
+         ArrayList<AudioLivro> listaAudioLivro = new ArrayList<AudioLivro>();
+         AudioLivro audioLivro1 = new AudioLivro("mp3", 150.8, 8.5,"Capitaes de areia", "Jorge Amado", "ficcao", true, 40);
+         listaAudioLivro.add(audioLivro1);
+         AudioLivro audioLivro2 = new AudioLivro("mp3", 150.8, 2.5,"A hora da estrela", "Clarice Lispector", "ficcao", true, 40);
+         listaAudioLivro.add(audioLivro2);
+         AudioLivro audioLivro3 = new AudioLivro("mp3", 150.8, 2.5,"Memorias postumas de bras cubas", "Machado de assis", "ficcao", true, 40);
+         listaAudioLivro.add(audioLivro3);
+         
+         estoque.setEstoqueDeAudioLivro(listaAudioLivro);
+         
+        //adicionando documentario ao estoque
+         ArrayList<Documentario> listaDocumentario = new ArrayList<Documentario>();
+         Documentario documentario1 = new Documentario("mp4", 530, 2.5, "Sementes do Nosso Quintal", "Fernanda Heinz Figueiredo", "educacao", true, "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
+       listaDocumentario.add(documentario1);
+       
+       Documentario documentario2 = new Documentario("mp4", 530, 2.5, "Pro dia nascer feliz", "Fernanda Heinz Figueiredo", "educacao", true, "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
+       listaDocumentario.add(documentario2);
+       Documentario documentario3 = new Documentario("mp4", 530, 2.5, "Quando sinto que já sei", "Fernanda Heinz Figueiredo", "educacao", true, "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
+       listaDocumentario.add(documentario3);
+       estoque.setEstoqueDeDocumentario(listaDocumentario);
+       
+         //adicionando videoaula ao estoque
+        ArrayList<VideoAula> listaVideoAula = new ArrayList<VideoAula>();
+        VideoAula videoAula1 = new VideoAula("mp4", 58.4, 20, "Metodo de frobenius", "canal matematica", "calculo 4", true, "720p", "calculo");
+        listaVideoAula.add(videoAula1);
+        VideoAula videoAula2 = new VideoAula("mp4", 58.4, 20, "Teoria da evolucao", "canal biologia", "calculo 4", true, "720p", "calculo");
+        listaVideoAula.add(videoAula2);
+        VideoAula videoAula3 = new VideoAula("mp4", 58.4, 20, "Leis da termodinamica", "canal fisica", "calculo 4", true, "720p", "calculo");
+        listaVideoAula.add(videoAula3);
+        estoque.setEstoqueDeVideoAula(listaVideoAula);
+        
+        
+        
+        
+        
+        
+        
         
         
         // Inicializando a View e o Controller
