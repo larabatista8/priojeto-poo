@@ -15,6 +15,7 @@ public class Estoque implements Emprestimo{
 	ArrayList<AudioLivro> estoqueDeAudioLivro = new ArrayList<AudioLivro>();
 	ArrayList<Documentario> estoqueDeDocumentario = new ArrayList<Documentario>(); 
 	ArrayList<VideoAula> estoqueDeVideoAula = new ArrayList<VideoAula>();
+	ArrayList<Podcast> estoqueDePodcast = new ArrayList<Podcast>();
 	
 
 	ArrayList<CD> estoqueDeCD = new ArrayList<CD>();
@@ -79,7 +80,7 @@ public class Estoque implements Emprestimo{
 	}
 	
 	public void listarJornais() {
-		System.out.println();
+	    System.out.println();
 	    if (estoqueDeJornais.isEmpty()) {
 	        System.out.println("Nenhum jornal disponível no estoque.");
 	        return;
@@ -92,6 +93,7 @@ public class Estoque implements Emprestimo{
 	        i++;
 	    }
 	}
+
 	
 	public void listarCDs() {
 	    System.out.println();
@@ -122,6 +124,36 @@ public class Estoque implements Emprestimo{
 	        i++;
 	    }
 	}
+	
+	public void listarDocumentarios() {
+	    System.out.println();
+	    if (estoqueDeDocumentario.isEmpty()) {
+	        System.out.println("Nenhum documentário disponível no estoque.");
+	        return;
+	    }
+
+	    System.out.println("Lista de Documentários Disponíveis:");
+	    int i = 0;
+	    for (Documentario documentario : estoqueDeDocumentario) {
+	        System.out.println(i + " - " + documentario.getTitulo());
+	        i++;
+	    }
+	}
+
+	public void listarAudioLivros() {
+	    System.out.println();
+	    if (estoqueDeAudioLivro.isEmpty()) {
+	        System.out.println("Nenhum audiolivro disponível no estoque.");
+	        return;
+	    }
+
+	    System.out.println("Lista de Audiolivros Disponíveis:");
+	    int i = 0;
+	    for (AudioLivro audioLivro : estoqueDeAudioLivro) {
+	        System.out.println(i + " - " + audioLivro.getTitulo());
+	        i++;
+	    }
+	}
 
 
 	
@@ -132,6 +164,8 @@ public class Estoque implements Emprestimo{
 				System.out.println(it.getTitulo());
 		}
 	}
+	
+	
 	public void listarObrasDisponiveis() {
 		System.out.println("Livros disponiveis para emprestimo:");
 		for(Livro it:estoqueDeLivros) {
@@ -669,6 +703,26 @@ public class Estoque implements Emprestimo{
 
 	    return false; // Retorna false se o DVD não foi encontrado
 	}
+	
+	
+	public boolean removerDocumentarioDoEstoque(String titulo) {
+	    // Verifica se o título é válido
+	    if (titulo == null || titulo.isEmpty()) {
+	        return false; // Título inválido
+	    }
+
+	    // Percorre o estoque de documentários
+	    for (int i = 0; i < estoqueDeDocumentario.size(); i++) {
+	        Documentario documentario = estoqueDeDocumentario.get(i);
+	        if (documentario.getTitulo().equalsIgnoreCase(titulo)) {
+	            estoqueDeDocumentario.remove(i); // Remove o documentário da lista
+	            return true; // Indica que o documentário foi removido
+	        }
+	    }
+
+	    return false; // Retorna false se o documentário não foi encontrado
+	}
+
 
 
 	public void adicionarCDAoEstoque(CD novoCD) {
@@ -678,6 +732,14 @@ public class Estoque implements Emprestimo{
 	public void adicionarDVDAoEstoque(DVD novoDVD) {
 		this.estoqueDeDVD.add(novoDVD);
 		
+	}
+	
+	public void adicionarDocumentarioAoEstoque(Documentario documentario) {
+		this.estoqueDeDocumentario.add(documentario);
+	}
+	
+	public void adicionarAudiolivroAoEstoque(AudioLivro novoAudiolivro) {
+		this.estoqueDeAudioLivro.add(novoAudiolivro);
 	}
 
 	
@@ -743,6 +805,70 @@ public class Estoque implements Emprestimo{
 	public void setEstoqueDeVideoAula(ArrayList<VideoAula> estoqueDeVideoAula) {
 		this.estoqueDeVideoAula = estoqueDeVideoAula;
 	}
+
+	public boolean removerAudiolivroDoEstoque(String titulo) {
+	    // Verifica se o título é válido
+	    if (titulo == null || titulo.isEmpty()) {
+	        return false; // Título inválido
+	    }
+
+	    // Percorre o estoque de audiolivros
+	    for (int i = 0; i < estoqueDeAudioLivro.size(); i++) {
+	        AudioLivro audioLivro = estoqueDeAudioLivro.get(i);
+	        if (audioLivro.getTitulo().equalsIgnoreCase(titulo)) {
+	            estoqueDeAudioLivro.remove(i); // Remove o audiolivro da lista
+	            return true; // Indica que o audiolivro foi removido
+	        }
+	    }
+
+	    return false; // Retorna false se o audiolivro não foi encontrado
+	}
+
+	public void adicionarPodcastAoEstoque(Podcast podcast) {
+	    if (podcast == null) {
+	        System.out.println("Erro: Podcast não pode ser nulo.");
+	        return;
+	    }
+	    estoqueDePodcast.add(podcast); // Certifique-se de que estoqueDePodcast é o ArrayList para armazenar podcasts
+	    System.out.println("Podcast adicionado ao estoque com sucesso!");
+	}
+
+	public boolean removerPodcastDoEstoque(String titulo) {
+	    // Verifica se o título é válido
+	    if (titulo == null || titulo.isEmpty()) {
+	        return false; // Título inválido
+	    }
+
+	    // Percorre o estoque de podcasts
+	    for (int i = 0; i < estoqueDePodcast.size(); i++) {
+	        Podcast podcast = estoqueDePodcast.get(i);
+	        if (podcast.getTitulo().equalsIgnoreCase(titulo)) {
+	            estoqueDePodcast.remove(i); // Remove o podcast da lista
+	            return true; // Indica que o podcast foi removido
+	        }
+	    }
+
+	    return false; // Retorna false se o podcast não foi encontrado
+	}
+
+	public void listarPodcasts() {
+	    System.out.println();
+	    if (estoqueDePodcast.isEmpty()) {
+	        System.out.println("Nenhum podcast disponível no estoque.");
+	        return;
+	    }
+
+	    System.out.println("Lista de Podcasts Disponíveis:");
+	    int i = 0;
+	    for (Podcast podcast : estoqueDePodcast) {
+	        System.out.println(i + " - " + podcast.getTitulo());
+	        i++;
+	    }
+	}
+
+
+
+
 
 	
 

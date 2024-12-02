@@ -6,8 +6,8 @@ public class Podcast extends CD {
 	
 
 	public Podcast(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria, String tema,
-			boolean disponivel, int quantidadeEpisodios) {
-		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, disponivel);
+		 int quantidadeEpisodios) {
+		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema);
 		this.quantidadeEpisodios = quantidadeEpisodios;
 	}
 

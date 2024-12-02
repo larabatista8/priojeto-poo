@@ -5,9 +5,8 @@ public class AudioLivro  extends CD{
 
 	
 
-	public AudioLivro(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria, String tema,
-			boolean disponivel, int quantidadeCapitulos) {
-		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, disponivel);
+	public AudioLivro(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria, String tema, int quantidadeCapitulos) {
+		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema);
 		this.quantidadeCapitulos = quantidadeCapitulos;
 	}
 

@@ -15,10 +15,14 @@ public class Documentario extends DVD {
 	
 
 	public Documentario(String formato, double tamanhoArquivo, double duracao, String titulo, String autoria,
-			String tema, boolean disponivel, String resolucao, String anoLancamento, String diretor, String paisOrigem,
-			String idioma, String classificacaoIndicativa) {
-		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, disponivel, resolucao);
-
+			String tema, String anoLancamento, String diretor, String paisOrigem,
+			String idioma, String classificacaoIndicativa, String resolucao) {
+		super(formato, tamanhoArquivo, duracao, titulo, autoria, tema, true, resolucao);
+		this.setAnoLancamento(anoLancamento);
+		this.setDiretor(diretor);
+		this.setPaisOrigem(paisOrigem);
+		this.setIdioma(idioma);
+		this.setClassificacaoIndicativa(classificacaoIndicativa);
 	}
 
 	public String getAnoLancamento() {

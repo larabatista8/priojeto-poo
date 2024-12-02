@@ -31,45 +31,41 @@ public class Main {
         estoque.adicionarLivroAoEstoque(livro3);
         
         // adicionando jornal ao estoque
-        ArrayList<Jornal> listaJornal = new ArrayList<Jornal>();
         Jornal jornal1 = new Jornal("Folha de Sao Paulo", "Folha de São Paulo", 2024, "02/12/2024", true);
-        listaJornal.add(jornal1);
+        estoque.adicionarJornalAoEstoque(jornal1);
         Jornal jornal2 = new Jornal("Estadao", "O estadao", 2024, "30/11/2024", true);
-        listaJornal.add(jornal2);
+        estoque.adicionarJornalAoEstoque(jornal2);
         Jornal jornal3 = new Jornal("O Globo", "O Globo", 2024, "02/12/2024", true);
-        listaJornal.add(jornal3);
-         estoque.setEstoqueDeJornais(listaJornal);
+        estoque.adicionarJornalAoEstoque(jornal3);
         
         // adicionando podcast ao estoque
-         ArrayList<Podcast> listaPodcast = new ArrayList<Podcast>();
-         Podcast podcast1 = new Podcast("mp3", 343, 4.5, "Educacao Brasil", "Revista educacao", "educacao basica", true, 20);
-         listaPodcast.add(podcast1);
+         Podcast podcast1 = new Podcast("mp3", 343, 4.5, "Educacao Brasil", "Revista educacao", "educacao basica", 20);
+         estoque.adicionarPodcastAoEstoque(podcast1);
          
-         Podcast podcast2 = new Podcast("mp3", 300, 4.5, "Historia em meia hora", "Agencia de Podcast", "historia", true, 45);
-         listaPodcast.add(podcast2);
-         Podcast podcast3 = new Podcast("mp3", 300, 4.5, "Educacao financeira", "G1", "economia", true, 58);
-         listaPodcast.add(podcast3);
-         estoque.setEstoqueDePodcasts(listaPodcast);
+         Podcast podcast2 = new Podcast("mp3", 300, 4.5, "Historia em meia hora", "Agencia de Podcast", "historia", 45);
+         estoque.adicionarPodcastAoEstoque(podcast2);
+         Podcast podcast3 = new Podcast("mp3", 300, 4.5, "Educacao financeira", "G1", "economia", 58);
+         estoque.adicionarPodcastAoEstoque(podcast3);
          
         //adicionando audiolivro ao estoque
          ArrayList<AudioLivro> listaAudioLivro = new ArrayList<AudioLivro>();
-         AudioLivro audioLivro1 = new AudioLivro("mp3", 150.8, 8.5,"Capitaes de areia", "Jorge Amado", "ficcao", true, 40);
+         AudioLivro audioLivro1 = new AudioLivro("mp3", 150.8, 8.5,"Capitaes de areia", "Jorge Amado", "ficcao", 40);
          listaAudioLivro.add(audioLivro1);
-         AudioLivro audioLivro2 = new AudioLivro("mp3", 150.8, 2.5,"A hora da estrela", "Clarice Lispector", "ficcao", true, 40);
+         AudioLivro audioLivro2 = new AudioLivro("mp3", 150.8, 2.5,"A hora da estrela", "Clarice Lispector", "ficcao", 40);
          listaAudioLivro.add(audioLivro2);
-         AudioLivro audioLivro3 = new AudioLivro("mp3", 150.8, 2.5,"Memorias postumas de bras cubas", "Machado de assis", "ficcao", true, 40);
+         AudioLivro audioLivro3 = new AudioLivro("mp3", 150.8, 2.5,"Memorias postumas de bras cubas", "Machado de assis", "ficcao", 40);
          listaAudioLivro.add(audioLivro3);
          
          estoque.setEstoqueDeAudioLivro(listaAudioLivro);
          
         //adicionando documentario ao estoque
          ArrayList<Documentario> listaDocumentario = new ArrayList<Documentario>();
-         Documentario documentario1 = new Documentario("mp4", 530, 2.5, "Sementes do Nosso Quintal", "Fernanda Heinz Figueiredo", "educacao", true, "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
+         Documentario documentario1 = new Documentario("mp4", 530, 2.5, "Sementes do Nosso Quintal", "Fernanda Heinz Figueiredo", "educacao", "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
        listaDocumentario.add(documentario1);
        
-       Documentario documentario2 = new Documentario("mp4", 530, 2.5, "Pro dia nascer feliz", "Fernanda Heinz Figueiredo", "educacao", true, "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
+       Documentario documentario2 = new Documentario("mp4", 530, 2.5, "Pro dia nascer feliz", "Fernanda Heinz Figueiredo", "educacao", "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
        listaDocumentario.add(documentario2);
-       Documentario documentario3 = new Documentario("mp4", 530, 2.5, "Quando sinto que já sei", "Fernanda Heinz Figueiredo", "educacao", true, "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
+       Documentario documentario3 = new Documentario("mp4", 530, 2.5, "Quando sinto que já sei", "Fernanda Heinz Figueiredo", "educacao", "720p", "2012", "Fernanda Heinz Figueiredo", "Brasil", "portuges", "Livre");
        listaDocumentario.add(documentario3);
        estoque.setEstoqueDeDocumentario(listaDocumentario);
        

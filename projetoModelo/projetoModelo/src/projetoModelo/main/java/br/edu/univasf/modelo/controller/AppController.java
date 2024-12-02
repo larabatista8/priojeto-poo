@@ -1,7 +1,5 @@
 package projetoModelo.main.java.br.edu.univasf.modelo.controller;
 
-import java.util.Scanner;
-
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Adimin;
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Estoque;
 import projetoModelo.main.java.br.edu.univasf.modelo.model.Usuario;
@@ -62,28 +60,61 @@ public class AppController {
                     adimin.addJornal(estoque);
                     break;
                 case 3:
-                    estoque.listarLivros();
+                    adimin.addCD(estoque);
                     break;
                 case 4:
-                	estoque.listarJornais();
-                	break;
-                case 5:
-                	adimin.apagaLivro(estoque);
-                	break;
-                case 6:
-                	adimin.apagaJornal(estoque);
-                	break;
-                case 7:
-                	adimin.addCD(estoque);
-                	break;
-                case 8:
                 	adimin.addDVD(estoque);
                 	break;
+                case 5:
+                	adimin.addDocumentario(estoque);
+                	break;
+                case 6:
+                	adimin.addAudiolivro(estoque);
+                	break;
+                case 7:
+                	adimin.addPodcast(estoque);
+                	break;
+                case 8:
+                	estoque.listarLivros();
+                	break;
                 case 9:
-                	estoque.listarCDs();
+                	estoque.listarJornais();
                 	break;
                 case 10:
+                	estoque.listarCDs();
+                	break;
+                case 11:
                 	estoque.listarDVDs();
+                	break;
+                case 12:
+                	estoque.listarDocumentarios();
+                	break;
+                case 13:
+                	estoque.listarAudioLivros();
+                	break;
+                case 14:
+                	estoque.listarPodcasts();
+                	break;
+                case 15:
+                	adimin.apagaLivro(estoque);
+                	break;
+                case 16:
+                	adimin.apagaJornal(estoque);
+                	break;
+                case 17:
+                	adimin.apagaCD(estoque);
+                	break;
+                case 18:
+                	adimin.apagaDVD(estoque);
+                	break;
+                case 19:
+                	adimin.apagaDocumentario(estoque);
+                	break;
+                case 20:
+                	adimin.apagaAudiolivro(estoque);
+                	break;
+                case 21:
+                	adimin.apagaPodcast(estoque);
                 	break;
                 case 0:
                     rodando = false;
