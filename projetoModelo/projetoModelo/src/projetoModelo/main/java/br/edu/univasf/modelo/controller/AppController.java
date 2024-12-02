@@ -56,16 +56,36 @@ public class AppController {
             int opcao = view.exibirMenuAdmin();
             switch (opcao) {
                 case 1:
-                    view.exibirMensagem("Adicionando livro... (a ser implementado)");
                     adimin.addLivro(estoque);
                     break;
                 case 2:
-                    view.exibirMensagem("Adicionando jornal... (a ser implementado)");
+                    adimin.addJornal(estoque);
                     break;
                 case 3:
-                    view.exibirMensagem("Visualizando empréstimos... (a ser implementado)");
+                    estoque.listarLivros();
                     break;
                 case 4:
+                	estoque.listarJornais();
+                	break;
+                case 5:
+                	adimin.apagaLivro(estoque);
+                	break;
+                case 6:
+                	adimin.apagaJornal(estoque);
+                	break;
+                case 7:
+                	adimin.addCD(estoque);
+                	break;
+                case 8:
+                	adimin.addDVD(estoque);
+                	break;
+                case 9:
+                	estoque.listarCDs();
+                	break;
+                case 10:
+                	estoque.listarDVDs();
+                	break;
+                case 0:
                     rodando = false;
                     view.exibirMensagem("Saindo do menu do administrador.");
                     break;

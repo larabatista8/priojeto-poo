@@ -49,6 +49,12 @@ import java.util.ArrayList;
 			this.email = email;
 		}
 		
+		public void fazerEmprestimo() {}
+		
+		public void renovarEmprestimo() {}
+		
+		public void devolverEmprestimo() {}
+
 		public int getDiasDeSuspensao() {
 			return diasDeSuspensao;
 		}
@@ -103,6 +109,7 @@ import java.util.ArrayList;
 			this.livrosEmprestados.remove(videoaula);
 		}
 
+
 		public ArrayList<Jornal> getJornaisEmprestados() {
 			return jornaisEmprestados;
 		}
@@ -144,6 +151,7 @@ import java.util.ArrayList;
 		}
 		
 		
+
 	}
 		
 
